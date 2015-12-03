@@ -40,12 +40,10 @@ function addPic(){
 	var picbox = document.getElementsByClassName("picbox");
 	var lastpic = picbox[picbox.length-1];
 	var lastheight = lastpic.offsetTop;
-	var scrollheight = document.documentElement.scrollTop;
+	var scrollheight = document.body.scrollTop;//竟然！！！不能用documentelement！！！要用body返回文本根目录！！！
 	console.log(lastheight);
 	console.log(scrollheight);
-	if(scrollheight > lastheight){
-		console.log("onload");
-	}
+
 }
 
 window.onload = function(){
