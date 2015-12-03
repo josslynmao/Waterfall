@@ -14,16 +14,18 @@ function findPosition(){
 	}
 	console.log(height);//检验
 
-	var min = minHeight(height);
+	var min = height[minHeight(height)];
 	console.log(min);//检验
 
+	var heightColNum = minHeight(height);
 	for (var i = 0; i < picbox.length; i++) {
-		min = minHeight(height);
-		if(i > colNum){
+		heightColNum = minHeight(height)
+		min = height[heightColNum];
+		if(i >= colNum){
 			picbox[i].style.position = "absolute";
 			picbox[i].style.top = min + "px";
-			picbox[i].style.left = (i%colNum) * (picbox[i].offsetWidth ) + "px";
-			height[i % colNum] = picbox[i].offsetHeight + min;
+			picbox[i].style.left = minHeight(height) * (picbox[i].offsetWidth ) + "px";
+			height[heightColNum] = picbox[i].offsetHeight + min;
 			console.log(picbox[i].style.top,picbox[i].style.left);
 		}
 		console.log(min);
@@ -36,5 +38,5 @@ window.onload = findPosition;
 
 function minHeight(picHeightArray){
 	var minHeight = Math.min.apply(Math,picHeightArray);//这个math！！终于改对了。。。
-	return minHeight;
+	return picHeightArray.indexOf(minHeight);
 }
