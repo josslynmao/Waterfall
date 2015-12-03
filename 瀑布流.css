@@ -12,13 +12,13 @@ img{
 }
 
 .picbox{
-	padding: 5px;
-	margin: 5px;
 	display: float;
 	float: left;
-	border: 2px solid grey;
-	border-radius: 10px;
-	
 }
 
-.pic{}
+.pic{
+	margin: 10px;
+	padding: 5px;
+	border: 2px solid grey;
+	border-radius: 10px;
+}
