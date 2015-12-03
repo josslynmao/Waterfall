@@ -43,6 +43,10 @@ function addPic(){
 	var scrollheight = document.body.scrollTop;//竟然！！！不能用documentelement！！！要用body返回文本根目录！！！
 	console.log(lastheight);
 	console.log(scrollheight);
+	if(document.documentElement.clientHeight + scrollheight > lastheight)
+	{
+		console.log("onload pic");
+	}
 
 }
 
