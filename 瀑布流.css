@@ -1,0 +1,24 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+img{
+	width: 250px;
+	height: auto;
+}
+
+#container{
+	
+}
+
+.picbox{
+	padding: 5px;
+	margin: 5px;
+	display: float;
+	float: left;
+	border: 2px solid grey;
+	border-radius: 10px;
+}
+
+.pic{}
