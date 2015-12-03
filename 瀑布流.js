@@ -19,7 +19,7 @@ function findPosition(){
 
 	var heightColNum = minHeight(height);
 	for (var i = 0; i < picbox.length; i++) {
-		heightColNum = minHeight(height)
+		heightColNum = minHeight(height);
 		min = height[heightColNum];
 		if(i >= colNum){
 			picbox[i].style.position = "absolute";
@@ -30,11 +30,30 @@ function findPosition(){
 		}
 		console.log(min);
 		console.log(height);
+		console.log(document.documentElement.clientHeight);
 	}
 
 }
 
-window.onload = findPosition;
+
+function addPic(){
+	var picbox = document.getElementsByClassName("picbox");
+	var lastpic = picbox[picbox.length-1];
+	var lastheight = lastpic.offsetTop;
+	var scrollheight = document.documentElement.scrollTop;
+	console.log(lastheight);
+	console.log(scrollheight);
+	if(scrollheight > lastheight){
+		console.log("onload");
+	}
+}
+
+window.onload = function(){
+	findPosition();
+	window.onscroll = function(){
+		addPic();
+	}
+}
 
 function minHeight(picHeightArray){
 	var minHeight = Math.min.apply(Math,picHeightArray);//这个math！！终于改对了。。。
