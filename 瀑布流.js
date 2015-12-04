@@ -37,9 +37,7 @@ function findPosition(){
 
 
 function addPic(){
-	var pic_onload = [
-		"picture":[{"src":"img/a.jpg"},{"src":"img/b.jpg"},{"src":"img/c.jpg"},{"src":"img/d.jpg"},{"src":"img/e.jpg"},{"src":"img/f.jpg"}]
-	];
+	
 	var picbox = document.getElementsByClassName("picbox");
 	var lastpic = picbox[picbox.length-1];
 	var lastheight = lastpic.offsetTop;
@@ -58,8 +56,22 @@ window.onload = function(){
 	findPosition();
 	window.onscroll = function(){
 		addPic();
+		var pic_onload = [{
+		"picture":[{"src":"img/a.jpg"},{"src":"img/b.jpg"},{"src":"img/c.jpg"},{"src":"img/d.jpg"},{"src":"img/e.jpg"},{"src":"img/f.jpg"}]
+	}];
 		if (addPic()) {
-
+			var addChildToDoc = document.getElementById("container");
+			for(var i = 0;i < pic_onload.picture.length;i++){
+				var addChild1 = document.createElement("div");
+				addChildToDoc.appendChild(addChild1);
+			    addChild1.className = "picbox";
+			    var addChild2 = document.createElement("div");
+			    addChild1.appendChild(addChild2);
+			    addChild2.className = "pic";
+			    var addImg = document.createElement("img");
+			    addChild2.appendChild(addImg);
+			    addImg.src = pic_onload.picture[i].src; 
+			}
 		};
 	}
 }
