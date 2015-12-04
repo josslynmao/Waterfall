@@ -37,6 +37,10 @@ function findPosition(){
 
 
 function addPic(){
+	var pic_onload = [{
+		url:["img/a.jpg","img/b.jpg","img/h.jpg","img/f.jpg","img/b.jpg","img/d.jpg","img/e.jpg","img/a.jpg"]
+	}
+	];
 	var picbox = document.getElementsByClassName("picbox");
 	var lastpic = picbox[picbox.length-1];
 	var lastheight = lastpic.offsetTop;
