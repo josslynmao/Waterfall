@@ -51,6 +51,7 @@ function addPic(){
 
 }
 
+
 window.onload = function(){
 	findPosition();
 	window.onscroll = function(){
@@ -70,6 +71,7 @@ window.onload = function(){
 			    addChild2.appendChild(addImg);
 			    addImg.src = pic_onload[0].picture[i].src; 
 			}
+			findPosition();
 		};
 	}
 }
@@ -78,3 +80,4 @@ function minHeight(picHeightArray){
 	var minHeight = Math.min.apply(Math,picHeightArray);//这个math！！终于改对了。。。
 	return picHeightArray.indexOf(minHeight);
 }
+
