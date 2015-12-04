@@ -37,9 +37,8 @@ function findPosition(){
 
 
 function addPic(){
-	var pic_onload = [{
-		url:["img/a.jpg","img/b.jpg","img/h.jpg","img/f.jpg","img/b.jpg","img/d.jpg","img/e.jpg","img/a.jpg"]
-	}
+	var pic_onload = [
+		"picture":[{"src":"img/a.jpg"},{"src":"img/b.jpg"},{"src":"img/c.jpg"},{"src":"img/d.jpg"},{"src":"img/e.jpg"},{"src":"img/f.jpg"}]
 	];
 	var picbox = document.getElementsByClassName("picbox");
 	var lastpic = picbox[picbox.length-1];
@@ -50,6 +49,7 @@ function addPic(){
 	if(document.documentElement.clientHeight + scrollheight > lastheight)
 	{
 		console.log("onload pic");
+		return true;
 	}
 
 }
@@ -58,6 +58,9 @@ window.onload = function(){
 	findPosition();
 	window.onscroll = function(){
 		addPic();
+		if (addPic()) {
+
+		};
 	}
 }
 
