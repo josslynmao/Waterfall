@@ -1,14 +1,14 @@
 function findPosition(){
 	var picbox = document.getElementsByClassName("picbox");
 	var container = document.getElementById("container");
-	var pic = document.getElementsByClassName("pic");
+	var banner = document.getElementById("banner");
 	var colNum = parseInt(document.documentElement.clientWidth/picbox[0].offsetWidth);
 	console.log(colNum);//检验
 	container.style.width = (picbox[0].offsetWidth) * colNum + "px";//用js的方法获取每个图片的宽度，设置container宽度，从而拖动浏览器不会改变float每行图片列数。2*5是margin。
 	console.log(container.style.width);//检验
 	var height = [];//用来记录四列总高度变化
 	for (var i = 0; i < colNum; i++) {
-		height[i] = picbox[i].offsetHeight;
+		height[i] = picbox[i].offsetHeight + banner.offsetHeight;//修改。加入banner后调整高度数组。
 	}
 	console.log(height);//检验
 	var min = height[minHeight(height)];
@@ -73,3 +73,4 @@ window.onload = function(){
 		};
 	}
 }
+

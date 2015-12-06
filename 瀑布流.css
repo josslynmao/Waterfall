@@ -8,7 +8,17 @@ img{
 	height: auto;
 }
 
+body{
+	display: none;
+}
+
+#banner{
+	font-size: 100px;
+}
+
 #container{
+
+	height: 100%;
 }
 
 .picbox{
@@ -22,3 +32,4 @@ img{
 	border: 2px solid grey;
 	border-radius: 10px;
 }
+
